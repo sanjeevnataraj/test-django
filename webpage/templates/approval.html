@@ -1,0 +1,187 @@
+<html>
+
+<head>
+
+  {% load static %}
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Approval</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<style type="text/css">
+  
+
+input[type="text"]
+{
+
+width: 250px;
+
+}
+
+.jumbotron,body
+{
+
+  background-color:   #000099;
+;
+
+}
+
+.card{
+
+  background-color: white;
+}
+
+#a2{
+
+  margin-left: 20px;
+
+  margin-top: 8px;
+}
+
+.b{
+
+ 
+margin-top: 23px;
+  padding-left: 10px;
+}
+
+
+.btn-primary{
+
+  width: 140px;
+
+  height: 50px;
+
+  font-weight: 900;
+  padding-left: 20px;
+
+  border-radius: 100px;
+  }
+
+  #h{
+
+      font-family: futura;
+      font-style: italic;
+
+      width:100%;
+
+      margin: 0 auto;
+      text-align: center;
+
+      color:white;
+      font-size:45px;
+      font-weight: bold;
+      position: absolute;
+      -webkit-animation:colorchange 20s infinite alternate;
+
+
+    }
+
+
+    @-webkit-keyframes colorchange {
+      0% {
+
+        color: yellow;
+      }
+
+      10% {
+
+        color: orange;
+      }
+
+      20% {
+
+        color: white;
+      }
+
+      30% {
+
+        color: #d35400;
+      }
+
+          }
+
+
+
+
+</style>
+
+</head>
+
+<body>
+  <h1 id='h'>Careers360</h1>
+
+<div class="jumbotron">
+
+<div class="container">
+	 
+<form method="post">
+
+{% csrf_token %}
+<section id="a1">
+  <div class =  "card m-t-5">
+    <div class="card-body ">
+      <div class="col-md-12">
+
+<h2 align="center">College Approval</h2>
+<br>
+<br>
+<div class="form-row">
+                <div class="col">
+
+<div class="a">
+<label>Approval</label /> {{approval.approvals}}  
+</div>
+</label>
+</div>
+
+<div class="col">
+<div class="md-form" id="a2">
+{{approval.other_approval}}
+
+<label for="inputMDEx">Other Approval</label>
+
+</div>
+</div>
+
+<div class="col">
+  <div class="b">
+<label>Accreditations</label> {{approval.Accreditations}}
+</div>
+</div>
+</div>
+<br><br>
+<button type="submit" class="btn btn-raised btn-primary" name='next'>Save</button>
+ <!-- <button type="submit" class="btn btn-raised btn-primary" name="prev" id="s1">Previous</button> -->
+ <a class="btn btn-raised btn-primary" id='s1' href="{% url 'admission' pk=ids  %}">Previous</a> 
+
+</div>
+</div>
+</div>
+</section>
+</form>
+</div>
+</div>
+ <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+ 
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+ 
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+
+</body>
+</html>
+
+
+

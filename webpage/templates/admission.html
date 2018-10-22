@@ -1,0 +1,184 @@
+<html>
+
+<head>
+{% load static %}
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Admission</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<style type="text/css">
+  
+
+
+.jumbotron,body
+{
+
+  background-color:   #000099;
+;
+
+}
+  
+.btn-primary{
+
+  width: 140px;
+
+  height: 60px;
+
+  font-weight: 900;
+  padding-left: 20px;
+
+  border-radius: 100px;
+  }
+
+#h{
+
+      font-family: futura;
+      font-style: italic;
+
+      width:100%;
+
+      margin: 0 auto;
+      text-align: center;
+
+      color:white;
+      font-size:45px;
+      font-weight: bold;
+      position: absolute;
+      -webkit-animation:colorchange 20s infinite alternate;
+
+    }
+
+
+    @-webkit-keyframes colorchange {
+      0% {
+
+        color: yellow;
+      }
+
+      10% {
+
+        color: orange;
+      }
+
+      20% {
+
+        color: white;
+      }
+
+      30% {
+
+        color: #d35400;
+      }
+
+          }
+
+
+#s1{
+
+  padding-top:22px; 
+}
+</style>
+
+
+</head>
+
+<body>
+<h1 id='h'>Careers360</h1>
+<div class="jumbotron">
+
+<div class="container">
+	 
+<form method="post">
+
+{% csrf_token %}
+<div class="card-body ">
+
+  <div class =  "card m-t-5">
+    <div class="card-body ">
+      <div class="col-md-12">
+
+<h2 align="center">Admission Details</h2>
+
+<br><br>
+
+<div class="form-row">
+<div class="col">
+<label for ="">Management Quota</label> {{admission.Quota}}
+</div>
+  <div class="col">
+ 
+<label for ="">Cut-off Based</label>   {{admission.Cut_off}}
+
+</div></div>
+<br><br>  
+<div class="form-row">
+
+  <div class="col">
+
+  <div class="md-form mt-0">
+  {{admission.Exam}}
+
+<label for ="materialRegisterFormEmail">College Exams</label> 
+
+</div></div>
+
+</div>
+
+<div class="form-row">         
+<div class="col">
+
+<div class="md-form">
+    
+{{admission.Seat_reservation}}
+
+<label for ="materialRegisterFormEmail">Seat Reservation Details</label> 
+
+</div></div></div>
+
+<div class="form-row">
+
+  <div class="col">
+
+<div class="md-form">
+    
+{{admission.Admisson_process}}
+
+<label for ="materialRegisterFormEmail">Admission Process</label> 
+
+</div></div></div>
+  
+ <input type="submit" class="btn btn-primary" name='next' value="Save & Next"> 
+ 
+<!--  <button type="submit" class="btn btn-raised btn-primary" name="prev" id="s1">Previous</button> 
+ --> <a class="btn btn-raised btn-primary" id='s1' href="{% url 'facility' pk=ids  %}">Previous</a>
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+ <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+ 
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+ 
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+
+</body>
+
+</html>
+

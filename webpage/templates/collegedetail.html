@@ -1,0 +1,218 @@
+<html>
+
+<head>
+ {% load static %}
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>College</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<style type="text/css">
+	
+
+.jumbotron,body
+{
+
+  background-color:   #000099;
+
+}
+.btn-primary{
+
+  width: 140px;
+
+  height: 50px;
+
+  font-weight: 900;
+  padding-left: 20px;
+
+
+  border-radius: 100px;
+  }
+
+
+#h{
+
+      font-family: futura;
+      font-style: italic;
+
+      width:100%;
+
+      margin: 0 auto;
+      text-align: center;
+
+      color:white;
+      font-size:45px;
+      font-weight: bold;
+      position: absolute;
+      -webkit-animation:colorchange 20s infinite alternate;
+
+
+    }
+
+
+    @-webkit-keyframes colorchange {
+      0% {
+
+        color: yellow;
+      }
+
+      10% {
+
+        color: orange;
+      }
+
+      20% {
+
+        color: white;
+      }
+
+      30% {
+
+        color: #d35400;
+      }
+
+          }
+
+
+
+
+</style>
+
+ <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places&language=en">
+   
+ </script>
+
+</head>
+
+<body>
+
+<h1 id="h">Careers360</h1>
+
+
+
+<div class="jumbotron">
+
+<div class="container">
+	<!-- <h1 align="center">careers360</h1>  -->
+<form method="post">
+
+{% csrf_token %}
+<div class="card-body ">
+
+  <div class =  "card m-t-5">
+    <div class="card-body ">
+      <div class="col-md-12">
+
+<h2 align="center">College Details</h2>
+<br><br>
+
+<div class="form-row">
+  <div class="col">
+
+<div class="md-form mt-0">
+
+{{college.Type_entity}}
+
+<label for="materialRegisterFormEmail">Type of Entity</label>
+
+</div></div>
+
+
+<div class="col">
+<div class="md-form mt-0">
+
+ {{college.Entity_name}}
+
+<label for="materialRegisterFormname">Entity Name</label>
+
+</div></div></div>
+
+<div class="form-row">
+  <div class="col">
+<div class="md-form mt-0">
+
+ {{college.College_website}}
+ 
+<label for="materialRegisterFormname">College Website</label>
+
+</div></div>
+
+
+  <div class="col">
+<div class="md-form mt-0">
+
+ {{college.Email}}
+ 
+<label for="materialRegisterFormname">Email</label>
+
+</div></div> </div>     
+
+<div class="form-row">
+  <div class="col">
+<div class="md-form mt-0">
+
+ {{college.Contactno}}
+ 
+<label for="materialRegisterFormname">Contact No.1</label>
+
+</div></div>       
+
+<div class="col">
+<div class="md-form mt-0">
+ 
+ {{college.Contactno2}}
+ 
+<label for="materialRegisterFormname">Contact No.2</label>
+</div></div>  </div>     
+       
+<div class="col">
+<div class="md-form mt-0">
+ 
+ {{college.Location}}
+ 
+</div></div> </div>  
+<br>
+
+<label>Publish</label> {{college.Publish}}
+<br><br>
+<button type="submit" class="btn btn-raised btn-primary" value="save" name="save">Save & Next</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+      var input = document.getElementById('id_Location');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+</script>
+
+ <script type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+ 
+  <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+
+  <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+ 
+  <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
