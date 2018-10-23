@@ -26,7 +26,7 @@ SECRET_KEY = 'n(0+y*42z0@h7&012tctd(x$48!=b)+cg7p*kg9b2=ne*ay*#)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['community.pythonanywhere.com']
+ALLOWED_HOSTS = ['sanjeevnataraj.pythonanywhere.com']
 
 
 # Application definition
